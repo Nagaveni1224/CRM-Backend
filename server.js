@@ -6,6 +6,7 @@ import dns from "dns";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
 import customerRoutes from "./routes/customerRoutes.js";
+import caseRoutes from "./routes/caseRoutes.js";
 import errorMiddleware from "./middleware/errorMiddleware.js";
 
 // Fix DNS resolution for MongoDB Atlas
@@ -25,6 +26,7 @@ connectDB();
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/customers", customerRoutes);
+app.use("/api/cases", caseRoutes);
 
 // Error handling middleware
 app.use(errorMiddleware);
